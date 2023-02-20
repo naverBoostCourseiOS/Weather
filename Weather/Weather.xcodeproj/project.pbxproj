@@ -56,15 +56,87 @@
 		8F452EEF29A35BFC00783930 /* Weather */ = {
 			isa = PBXGroup;
 			children = (
-				8F452EF029A35BFC00783930 /* AppDelegate.swift */,
-				8F452EF229A35BFC00783930 /* SceneDelegate.swift */,
-				8F452EF429A35BFC00783930 /* ViewController.swift */,
-				8F452EF629A35BFC00783930 /* Main.storyboard */,
-				8F452EF929A35BFE00783930 /* Assets.xcassets */,
-				8F452EFB29A35BFE00783930 /* LaunchScreen.storyboard */,
-				8F452EFE29A35BFE00783930 /* Info.plist */,
+				8F452F0529A35CA600783930 /* Resources */,
+				8F452F0429A35C9A00783930 /* Sources */,
 			);
 			path = Weather;
+			sourceTree = "<group>";
+		};
+		8F452F0429A35C9A00783930 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				8F452F0A29A35D1700783930 /* Models */,
+				8F452F0929A35D0100783930 /* Views */,
+				8F452F0829A35CEC00783930 /* Extensions */,
+				8F452F0629A35CAF00783930 /* Delegates */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		8F452F0529A35CA600783930 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8F452F0C29A35D6300783930 /* Fonts */,
+				8F452F0B29A35D5700783930 /* Storyboards */,
+				8F452F0729A35CBD00783930 /* Supporting Files */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		8F452F0629A35CAF00783930 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				8F452EF029A35BFC00783930 /* AppDelegate.swift */,
+				8F452EF229A35BFC00783930 /* SceneDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		8F452F0729A35CBD00783930 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8F452EFE29A35BFE00783930 /* Info.plist */,
+				8F452EF929A35BFE00783930 /* Assets.xcassets */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8F452F0829A35CEC00783930 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8F452F0929A35D0100783930 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8F452EF429A35BFC00783930 /* ViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8F452F0A29A35D1700783930 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8F452F0B29A35D5700783930 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				8F452EF629A35BFC00783930 /* Main.storyboard */,
+				8F452EFB29A35BFE00783930 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		8F452F0C29A35D6300783930 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,7 +361,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 62SDS28JUT;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Weather/Info.plist;
+				INFOPLIST_FILE = "Weather/Resources/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -320,7 +392,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 62SDS28JUT;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Weather/Info.plist;
+				INFOPLIST_FILE = "Weather/Resources/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
