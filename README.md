@@ -1,6 +1,11 @@
 # Weather
 Naver boostcourse : 야곰 iOS 앱 프로그래밍 강의 중 프로젝트C. Weather 실습
 
+## ❗️스터디 레포지터리 관리 방법 변경
+
+별도의 fork 없이 <name>/ 디렉토리 생성 <br>
+💡예시: Weather/Rx/WeatherToday
+
 
 ## Commit & Pull Request 규칙
 
