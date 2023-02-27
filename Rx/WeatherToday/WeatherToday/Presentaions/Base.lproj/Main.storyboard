@@ -24,6 +24,21 @@
             </objects>
             <point key="canvasLocation" x="1011.4503816793892" y="17.605633802816904"/>
         </scene>
+        <!--City List View Controller-->
+        <scene sceneID="Qhz-Qe-NUH">
+            <objects>
+                <viewController storyboardIdentifier="CityListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PMm-zM-4Ei" customClass="CityListViewController" customModule="WeatherToday" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9Gg-qX-oG3">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="lMC-qh-cVi"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YeT-Ur-w17" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1839" y="18"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="L7w-4d-STT">
             <objects>

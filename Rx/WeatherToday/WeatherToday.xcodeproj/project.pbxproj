@@ -16,6 +16,10 @@
 		EF7172A029ABC8AE0064CEA9 /* WeatherTodayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF71729F29ABC8AE0064CEA9 /* WeatherTodayTests.swift */; };
 		EF7172AA29ABC8AE0064CEA9 /* WeatherTodayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7172A929ABC8AE0064CEA9 /* WeatherTodayUITests.swift */; };
 		EF7172AC29ABC8AE0064CEA9 /* WeatherTodayUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7172AB29ABC8AE0064CEA9 /* WeatherTodayUITestsLaunchTests.swift */; };
+		EF7172C329ACF3990064CEA9 /* CountryListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7172C129ACF3990064CEA9 /* CountryListCell.swift */; };
+		EF7172C429ACF3990064CEA9 /* CountryListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF7172C229ACF3990064CEA9 /* CountryListCell.xib */; };
+		EF7172C629ACF55D0064CEA9 /* CountryListDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7172C529ACF55D0064CEA9 /* CountryListDTO.swift */; };
+		EF7172C929AD02EF0064CEA9 /* CityListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7172C829AD02EF0064CEA9 /* CityListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,10 @@
 		EF7172A529ABC8AE0064CEA9 /* WeatherTodayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherTodayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF7172A929ABC8AE0064CEA9 /* WeatherTodayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTodayUITests.swift; sourceTree = "<group>"; };
 		EF7172AB29ABC8AE0064CEA9 /* WeatherTodayUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTodayUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		EF7172C129ACF3990064CEA9 /* CountryListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListCell.swift; sourceTree = "<group>"; };
+		EF7172C229ACF3990064CEA9 /* CountryListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryListCell.xib; sourceTree = "<group>"; };
+		EF7172C529ACF55D0064CEA9 /* CountryListDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListDTO.swift; sourceTree = "<group>"; };
+		EF7172C829AD02EF0064CEA9 /* CityListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				EF7172BE29ACEBE20064CEA9 /* Applications */,
+				EF7172C729ACF6400064CEA9 /* Data */,
 				EF7172BF29ACEBEF0064CEA9 /* Presentaions */,
 				EF7172C029ACEC210064CEA9 /* Resources */,
 			);
@@ -137,6 +146,9 @@
 			children = (
 				EF71728C29ABC8AC0064CEA9 /* CountryListViewController.swift */,
 				EF71728E29ABC8AC0064CEA9 /* Main.storyboard */,
+				EF7172C129ACF3990064CEA9 /* CountryListCell.swift */,
+				EF7172C229ACF3990064CEA9 /* CountryListCell.xib */,
+				EF7172C829AD02EF0064CEA9 /* CityListViewController.swift */,
 			);
 			path = Presentaions;
 			sourceTree = "<group>";
@@ -149,6 +161,14 @@
 				EF71729629ABC8AE0064CEA9 /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		EF7172C729ACF6400064CEA9 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				EF7172C529ACF55D0064CEA9 /* CountryListDTO.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,6 +275,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF7172C429ACF3990064CEA9 /* CountryListCell.xib in Resources */,
 				EF71729529ABC8AE0064CEA9 /* LaunchScreen.storyboard in Resources */,
 				EF71729229ABC8AE0064CEA9 /* Assets.xcassets in Resources */,
 				EF71729029ABC8AC0064CEA9 /* Main.storyboard in Resources */,
@@ -282,9 +303,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF7172C329ACF3990064CEA9 /* CountryListCell.swift in Sources */,
 				EF71728D29ABC8AC0064CEA9 /* CountryListViewController.swift in Sources */,
+				EF7172C629ACF55D0064CEA9 /* CountryListDTO.swift in Sources */,
 				EF71728929ABC8AC0064CEA9 /* AppDelegate.swift in Sources */,
 				EF71728B29ABC8AC0064CEA9 /* SceneDelegate.swift in Sources */,
+				EF7172C929AD02EF0064CEA9 /* CityListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
