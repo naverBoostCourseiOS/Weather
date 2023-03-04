@@ -96,7 +96,7 @@ extension CityListViewController: UITableViewDelegate, UITableViewDataSource {
             let countryInfo: [CountryInfoDTO] = try jsonDecoder.decode([CountryInfoDTO].self, from: dataAsset.data)
             
         } catch {
-            print("error", error.localizedDescription)
+            print(error.localizedDescription)
         }
     }
 }
