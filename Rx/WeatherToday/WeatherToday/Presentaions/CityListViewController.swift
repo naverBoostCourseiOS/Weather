@@ -90,14 +90,9 @@ extension CityListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView( _ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let info = countryInfos[indexPath.row]
         
-        let jsonDecoder: JSONDecoder = JSONDecoder()
-        guard let dataAsset: NSDataAsset = NSDataAsset(name: "kr") else { return }
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: WeatherDetailViewController.identifier) as? WeatherDetailViewController else { return }
+        vc.countryInfo = info
         
-        do {
-            let countryInfo: [CountryInfoDTO] = try jsonDecoder.decode([CountryInfoDTO].self, from: dataAsset.data)
-            
-        } catch {
-            print(error.localizedDescription)
-        }
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
