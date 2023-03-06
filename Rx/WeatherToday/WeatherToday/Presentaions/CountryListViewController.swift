@@ -33,10 +33,23 @@ class CountryListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        configureNaviAppearance()
+        configureTableView()
+        decodeDataAsset()
+    }
+
+    private func configureNaviAppearance() {
         navigationItem.title = "세계 날씨"
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = .systemBlue
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
         navigationController?.navigationBar.tintColor = .white
-        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
-        view.backgroundColor = .systemBlue
+    }
+    
+    private func configureTableView() {
         view.addSubview(tableView)
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -46,7 +59,9 @@ class CountryListViewController: UIViewController {
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
-        
+    }
+    
+    private func decodeDataAsset() {
         let jsonDecoder: JSONDecoder = JSONDecoder()
         
         guard let dataAsset: NSDataAsset = NSDataAsset(name: "countries") else { return }
@@ -58,9 +73,8 @@ class CountryListViewController: UIViewController {
             print("error", error.localizedDescription)
         }
     }
-
-
 }
+
 // MARK: UITableViewDelegate, UITableViewDataSource Method
 extension CountryListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

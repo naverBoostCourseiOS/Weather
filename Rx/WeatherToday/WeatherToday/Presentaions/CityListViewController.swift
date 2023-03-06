@@ -37,7 +37,6 @@ class CityListViewController: UIViewController {
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero)
         
-        
         tableView.register(UINib(nibName: CountryListCell.identifier, bundle: nil),
                            forCellReuseIdentifier: CountryListCell.identifier)
         tableView.delegate = self
@@ -50,7 +49,10 @@ class CityListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .systemBlue
+        configureTableView()
+    }
+    
+    private func configureTableView() {
         view.addSubview(tableView)
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -70,7 +72,6 @@ extension CityListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //let cell = tableView.dequeueReusableCell(withIdentifier: CountryListCell.identifier, for: indexPath)
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: CountryListCell.identifier)
         let info = countryInfos[indexPath.row]
         let state = WeatherState(rawValue: info.state)
