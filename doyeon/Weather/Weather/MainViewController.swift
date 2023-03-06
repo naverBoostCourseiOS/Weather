@@ -31,14 +31,30 @@ enum Country: String {
             return "flag_jp"
         }
     }
+    
+    var code: String {
+        switch self {
+        case .kr:
+            return "kr"
+        case .de:
+            return "de"
+        case .it:
+            return "it"
+        case .us:
+            return "us"
+        case .fr:
+            return "fr"
+        case .jp:
+            return "jp"
+        }
+    }
 }
-
 
 class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     let cellIdentifier: String = "cell"
-    let countriesInOrder: [Country] = [.us, .jp, .us, .fr, .de, .it, .kr]
+    let countriesInOrder: [Country] = [.kr, .de, .it, .us, .fr, .jp]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,9 +84,14 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        <#code#>
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showCountry", let indexPath = tableView.indexPathForSelectedRow {
+            let country = countriesInOrder[indexPath.row]
+            if let destinationVC = segue.destination as? CountryViewController {
+                destinationVC.selectedCountryName = country.rawValue
+                destinationVC.countryJSONFileName = country.code
+            }
+        }
     }
-
 }
 
