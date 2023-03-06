@@ -7,16 +7,7 @@
 
 import UIKit
 
-//enum Nations {
-//    case kr
-//    case de
-//    case kr
-//    case kr
-//    case kr
-//    case kr
-//}
-
-class CountryListViewController: UIViewController {
+final class CountryListViewController: UIViewController {
 
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero)

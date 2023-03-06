@@ -17,10 +17,11 @@
 		EF7172AA29ABC8AE0064CEA9 /* WeatherTodayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7172A929ABC8AE0064CEA9 /* WeatherTodayUITests.swift */; };
 		EF7172AC29ABC8AE0064CEA9 /* WeatherTodayUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7172AB29ABC8AE0064CEA9 /* WeatherTodayUITestsLaunchTests.swift */; };
 		EF7172C329ACF3990064CEA9 /* CountryListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7172C129ACF3990064CEA9 /* CountryListCell.swift */; };
-		EF7172C429ACF3990064CEA9 /* CountryListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF7172C229ACF3990064CEA9 /* CountryListCell.xib */; };
 		EF7172C629ACF55D0064CEA9 /* CountryListDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7172C529ACF55D0064CEA9 /* CountryListDTO.swift */; };
 		EF7172C929AD02EF0064CEA9 /* CityListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7172C829AD02EF0064CEA9 /* CityListViewController.swift */; };
 		EF7D57D829B641E8000950DB /* WeatherDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7D57D729B641E8000950DB /* WeatherDetailViewController.swift */; };
+		EFD5355D29B651A8009A9805 /* CountryListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFD5355C29B651A8009A9805 /* CountryListCell.xib */; };
+		EFD5356129B6521A009A9805 /* Weather_Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD5356029B6521A009A9805 /* Weather_Enum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,10 +56,11 @@
 		EF7172A929ABC8AE0064CEA9 /* WeatherTodayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTodayUITests.swift; sourceTree = "<group>"; };
 		EF7172AB29ABC8AE0064CEA9 /* WeatherTodayUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTodayUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		EF7172C129ACF3990064CEA9 /* CountryListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListCell.swift; sourceTree = "<group>"; };
-		EF7172C229ACF3990064CEA9 /* CountryListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryListCell.xib; sourceTree = "<group>"; };
 		EF7172C529ACF55D0064CEA9 /* CountryListDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListDTO.swift; sourceTree = "<group>"; };
 		EF7172C829AD02EF0064CEA9 /* CityListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListViewController.swift; sourceTree = "<group>"; };
 		EF7D57D729B641E8000950DB /* WeatherDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailViewController.swift; sourceTree = "<group>"; };
+		EFD5355C29B651A8009A9805 /* CountryListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CountryListCell.xib; sourceTree = "<group>"; };
+		EFD5356029B6521A009A9805 /* Weather_Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather_Enum.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,12 +148,8 @@
 		EF7172BF29ACEBEF0064CEA9 /* Presentaions */ = {
 			isa = PBXGroup;
 			children = (
-				EF71728C29ABC8AC0064CEA9 /* CountryListViewController.swift */,
 				EF71728E29ABC8AC0064CEA9 /* Main.storyboard */,
-				EF7172C129ACF3990064CEA9 /* CountryListCell.swift */,
-				EF7172C229ACF3990064CEA9 /* CountryListCell.xib */,
-				EF7172C829AD02EF0064CEA9 /* CityListViewController.swift */,
-				EF7D57D729B641E8000950DB /* WeatherDetailViewController.swift */,
+				EF7D57D929B65181000950DB /* CityListScene */,
 			);
 			path = Presentaions;
 			sourceTree = "<group>";
@@ -170,8 +168,37 @@
 			isa = PBXGroup;
 			children = (
 				EF7172C529ACF55D0064CEA9 /* CountryListDTO.swift */,
+				EFD5356029B6521A009A9805 /* Weather_Enum.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		EF7D57D929B65181000950DB /* CityListScene */ = {
+			isa = PBXGroup;
+			children = (
+				EF7172C829AD02EF0064CEA9 /* CityListViewController.swift */,
+				EF7172C129ACF3990064CEA9 /* CountryListCell.swift */,
+				EFD5355C29B651A8009A9805 /* CountryListCell.xib */,
+				EFD5355E29B651CD009A9805 /* CountryList */,
+			);
+			path = CityListScene;
+			sourceTree = "<group>";
+		};
+		EFD5355E29B651CD009A9805 /* CountryList */ = {
+			isa = PBXGroup;
+			children = (
+				EF71728C29ABC8AC0064CEA9 /* CountryListViewController.swift */,
+				EFD5355F29B651E0009A9805 /* WeatherDetailInfo */,
+			);
+			path = CountryList;
+			sourceTree = "<group>";
+		};
+		EFD5355F29B651E0009A9805 /* WeatherDetailInfo */ = {
+			isa = PBXGroup;
+			children = (
+				EF7D57D729B641E8000950DB /* WeatherDetailViewController.swift */,
+			);
+			path = WeatherDetailInfo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,7 +305,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF7172C429ACF3990064CEA9 /* CountryListCell.xib in Resources */,
+				EFD5355D29B651A8009A9805 /* CountryListCell.xib in Resources */,
 				EF71729529ABC8AE0064CEA9 /* LaunchScreen.storyboard in Resources */,
 				EF71729229ABC8AE0064CEA9 /* Assets.xcassets in Resources */,
 				EF71729029ABC8AC0064CEA9 /* Main.storyboard in Resources */,
@@ -307,6 +334,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF7172C329ACF3990064CEA9 /* CountryListCell.swift in Sources */,
+				EFD5356129B6521A009A9805 /* Weather_Enum.swift in Sources */,
 				EF71728D29ABC8AC0064CEA9 /* CountryListViewController.swift in Sources */,
 				EF7172C629ACF55D0064CEA9 /* CountryListDTO.swift in Sources */,
 				EF7D57D829B641E8000950DB /* WeatherDetailViewController.swift in Sources */,

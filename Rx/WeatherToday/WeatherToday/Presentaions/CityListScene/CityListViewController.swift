@@ -7,30 +7,7 @@
 
 import UIKit
 
-enum WeatherState: Int {
-    case sunny = 10
-    case cloudy
-    case rainy
-    case snowy
-    
-    var imageName: String {
-        switch self {
-        case .sunny:
-            return "sunny"
-            
-        case .cloudy:
-            return "cloudy"
-
-        case .rainy:
-            return "rainy"
-        
-        case .snowy:
-            return "snowy"
-        }
-    }
-}
-
-class CityListViewController: UIViewController {
+final class CityListViewController: UIViewController {
     
     static let identifier: String = String(describing: CityListViewController.self)
     
@@ -88,10 +65,26 @@ extension CityListViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView( _ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let info = countryInfos[indexPath.row]
+        let infos = countryInfos.map { info -> WeatherInfo in
+            let cityName = info.city_name
+            let state = WeatherState(rawValue: info.state)
+            let image = UIImage(named: state!.imageName)
+            let localized = state!.loacalized
+            let celsius = info.celsius.description
+            let fahrenheit = String(format: "%.1f", (info.celsius * 1.8) + 32)
+            let temperature = "섭씨 \(celsius)도, 화씨 \(fahrenheit)도"
+            let rainfallProbability = "강수확률 \(info.rainfall_probability)%"
+            
+            
+            return WeatherInfo(cityName: cityName,
+                               image: image,
+                               localized: localized,
+                               temperature: temperature,
+                               rainfallProbability: rainfallProbability)
+        }
         
         guard let vc = self.storyboard?.instantiateViewController(withIdentifier: WeatherDetailViewController.identifier) as? WeatherDetailViewController else { return }
-        vc.countryInfo = info
+        vc.weatherInfo = infos[indexPath.row]
         
         self.navigationController?.pushViewController(vc, animated: true)
     }

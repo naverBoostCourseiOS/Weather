@@ -5,7 +5,7 @@
 //  Created by 강동영 on 2023/02/27.
 //
 
-import Foundation
+import UIKit
 
 struct ContriesDTO: Decodable {
     let korean_name: String
@@ -18,4 +18,12 @@ struct CountryInfoDTO: Decodable {
     let state: Int
     let celsius: Float
     let rainfall_probability: Int
+}
+
+struct WeatherInfo {
+    let cityName: String
+    let image: UIImage?
+    let localized: String
+    let temperature: String
+    let rainfallProbability: String
 }
