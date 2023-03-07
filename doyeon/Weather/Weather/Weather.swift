@@ -11,6 +11,21 @@ struct Weather: Codable {
     let celsius: Float
     let rainfallProbability: Int
     
+    var getWeatherImage: String {
+        switch state {
+        case 10:
+            return "sunny"
+        case 11:
+            return "cloudy"
+        case 12:
+            return "rainy"
+        case 13:
+            return "snowy"
+        default:
+            return ""
+        }
+    }
+    
     var fahrenheit: Float { // 화씨
         return (celsius * 9/5) + 32
     }

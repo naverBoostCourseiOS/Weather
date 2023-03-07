@@ -46,7 +46,7 @@ class CountryViewController: UIViewController, UITableViewDelegate, UITableViewD
         let cell: CustomTableViewCell = tableView.dequeueReusableCell(withIdentifier: self.customCellIdentifier, for: indexPath) as! CustomTableViewCell
         let weather = self.weathers[indexPath.row]
         
-        cell.weatherImageView.image = UIImage(named: "cloudy")
+        cell.weatherImageView.image = UIImage(named: weather.getWeatherImage)
         cell.cityNameLabel.text = weather.cityName
         cell.temperatureLabel.text = weather.getTemp
         cell.rainfallProbabilityLabel.text = weather.getRainfallProb
