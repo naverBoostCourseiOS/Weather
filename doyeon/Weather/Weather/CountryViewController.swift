@@ -52,5 +52,18 @@ class CountryViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.rainfallProbabilityLabel.text = weather.getRainfallProb
         return cell
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetail", let indexPath = tableView.indexPathForSelectedRow {
+            let city = weathers[indexPath.row]
+            if let destinationVC = segue.destination as? DetailViewController {
+                destinationVC.weatherImageName = city.getWeatherImage
+                destinationVC.weatherStateString = city.getWeatherState
+                destinationVC.tempertureString = city.getTemp
+                destinationVC.precipitationProbability = city.getRainfallProb
+                destinationVC.cityName = city.cityName
+            }
+        }
+    }
 
 }

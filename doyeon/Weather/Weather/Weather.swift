@@ -26,6 +26,21 @@ struct Weather: Codable {
         }
     }
     
+    var getWeatherState: String {
+        switch state {
+        case 10:
+            return "해"
+        case 11:
+            return "구름"
+        case 12:
+            return "비"
+        case 13:
+            return "눈"
+        default:
+            return ""
+        }
+    }
+    
     var fahrenheit: Float { // 화씨
         return (celsius * 9/5) + 32
     }
