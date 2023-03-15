@@ -17,9 +17,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     options connectionOptions: UIScene.ConnectionOptions
   ) {
     
+    let decoder: Decodable = Decoder()
+    let nsDataaAssetConvertor: NSDataAssetConvertable = NSDataAssetConvertor()
+    let countiresRepository: CountriesRepositorable = CountriesRepository(
+      decoder: decoder,
+      nsDataAssetConvertor: nsDataaAssetConvertor
+    )
     let viewController = HomeViewController(
       .init(
-        decoder: Decoder()
+        countriesRepository: countiresRepository
       )
     )
     let navigationController = UINavigationController(rootViewController: viewController)

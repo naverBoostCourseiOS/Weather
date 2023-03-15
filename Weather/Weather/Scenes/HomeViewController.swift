@@ -9,7 +9,7 @@ import UIKit
 
 final class HomeViewController: UIViewController {
   struct Dependency {
-    let decoder: Decodable
+    let countriesRepository: CountriesRepositorable
   }
   
   // MARK: - Properties
@@ -90,10 +90,11 @@ extension HomeViewController {
 // MARK: - Private Function
 extension HomeViewController {
   private func fetchData() {
-    guard let dataAsset: NSDataAsset = NSDataAsset(name: "countries") else { return }
-    guard let countries = try? dependency.decoder.decode([Country].self, data: dataAsset.data) else { return }
-    self.countries = countries
-    contriesTableView.reloadData()
+    dependency.countriesRepository.fetch { [weak self] countries in
+      guard let self = self else { return }
+      self.countries = countries
+      self.contriesTableView.reloadData()
+    }
   }
 }
 

@@ -24,6 +24,8 @@
 		EF3391F129B1DDDA00DC6E48 /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3391F029B1DDDA00DC6E48 /* CountryTableViewCell.swift */; };
 		EFC0B4EE29C2155400C626A7 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC0B4ED29C2155400C626A7 /* HeaderView.swift */; };
 		EFC0B4F129C21A6200C626A7 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC0B4F029C21A6200C626A7 /* Country.swift */; };
+		EFC0B4F429C21DEE00C626A7 /* CountriesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC0B4F329C21DEE00C626A7 /* CountriesRepository.swift */; };
+		EFC0B4F629C21EBA00C626A7 /* NSDataAssetConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC0B4F529C21EBA00C626A7 /* NSDataAssetConvertor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,8 @@
 		EF3391F029B1DDDA00DC6E48 /* CountryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTableViewCell.swift; sourceTree = "<group>"; };
 		EFC0B4ED29C2155400C626A7 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		EFC0B4F029C21A6200C626A7 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		EFC0B4F329C21DEE00C626A7 /* CountriesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesRepository.swift; sourceTree = "<group>"; };
+		EFC0B4F529C21EBA00C626A7 /* NSDataAssetConvertor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSDataAssetConvertor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,7 @@
 		EF2C070029B1A05100A7E91E /* Weather */ = {
 			isa = PBXGroup;
 			children = (
+				EFC0B4F229C21DC000C626A7 /* Repositories */,
 				EFC0B4EF29C21A5900C626A7 /* Model */,
 				EF2C074029B1CFC500A7E91E /* Utilities */,
 				EF2C073429B1C5B600A7E91E /* Services */,
@@ -211,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				EF2C073F29B1CFAB00A7E91E /* Extensions */,
+				EFC0B4F529C21EBA00C626A7 /* NSDataAssetConvertor.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -237,6 +243,14 @@
 				EFC0B4F029C21A6200C626A7 /* Country.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		EFC0B4F229C21DC000C626A7 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				EFC0B4F329C21DEE00C626A7 /* CountriesRepository.swift */,
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -371,6 +385,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF3391F129B1DDDA00DC6E48 /* CountryTableViewCell.swift in Sources */,
+				EFC0B4F629C21EBA00C626A7 /* NSDataAssetConvertor.swift in Sources */,
+				EFC0B4F429C21DEE00C626A7 /* CountriesRepository.swift in Sources */,
 				EF2C073629B1C5CA00A7E91E /* Decoder.swift in Sources */,
 				EF2C070629B1A05100A7E91E /* HomeViewController.swift in Sources */,
 				EF2C070229B1A05100A7E91E /* AppDelegate.swift in Sources */,
