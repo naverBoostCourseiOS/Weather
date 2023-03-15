@@ -8,16 +8,22 @@
 import Foundation.NSJSONSerialization
 
 protocol Decodable {
-  func decode<T: Codable>(_ decodable: T.Type, data from: Data?) -> T?
+  func decode<T: Codable>(_ decodable: T.Type, data from: Data?) throws -> T
 }
 
 struct Decoder: Decodable {
-  func decode<T: Codable>(_ decodable: T.Type, data from: Data?) -> T? {
+  enum DecoderError: Error {
+    case dataIsNil
+    case catchError(Error)
+  }
+  
+  func decode<T: Codable>(_ decodable: T.Type, data from: Data?) throws -> T {
+    guard let data = from else { throw DecoderError.dataIsNil }
     do {
-      let decoder = try JSONDecoder().decode(decodable.self, from: from!)
+      let decoder = try JSONDecoder().decode(decodable.self, from: data)
       return decoder
     } catch {
-      return nil
+      throw DecoderError.catchError(error)
     }
   }
 }

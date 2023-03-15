@@ -21,6 +21,9 @@
 		EF2C073C29B1CC0C00A7E91E /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2C073B29B1CC0C00A7E91E /* JSON.swift */; };
 		EF2C073E29B1CCAE00A7E91E /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2C073D29B1CCAE00A7E91E /* Person.swift */; };
 		EF2C074229B1CFDF00A7E91E /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2C074129B1CFDF00A7E91E /* UIView+Extension.swift */; };
+		EF3391F129B1DDDA00DC6E48 /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3391F029B1DDDA00DC6E48 /* CountryTableViewCell.swift */; };
+		EFC0B4EE29C2155400C626A7 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC0B4ED29C2155400C626A7 /* HeaderView.swift */; };
+		EFC0B4F129C21A6200C626A7 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC0B4F029C21A6200C626A7 /* Country.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +62,9 @@
 		EF2C073B29B1CC0C00A7E91E /* JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 		EF2C073D29B1CCAE00A7E91E /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		EF2C074129B1CFDF00A7E91E /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		EF3391F029B1DDDA00DC6E48 /* CountryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTableViewCell.swift; sourceTree = "<group>"; };
+		EFC0B4ED29C2155400C626A7 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		EFC0B4F029C21A6200C626A7 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +115,7 @@
 		EF2C070029B1A05100A7E91E /* Weather */ = {
 			isa = PBXGroup;
 			children = (
+				EFC0B4EF29C21A5900C626A7 /* Model */,
 				EF2C074029B1CFC500A7E91E /* Utilities */,
 				EF2C073429B1C5B600A7E91E /* Services */,
 				EF2C073329B1BAF000A7E91E /* Resources */,
@@ -149,6 +156,8 @@
 		EF2C073229B1BAD900A7E91E /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				EFC0B4EC29C2154A00C626A7 /* Views */,
+				EF3391EF29B1DD8A00DC6E48 /* Cells */,
 				EF2C070529B1A05100A7E91E /* HomeViewController.swift */,
 				EF2C070729B1A05100A7E91E /* Main.storyboard */,
 				EF2C070C29B1A05200A7E91E /* LaunchScreen.storyboard */,
@@ -204,6 +213,30 @@
 				EF2C073F29B1CFAB00A7E91E /* Extensions */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		EF3391EF29B1DD8A00DC6E48 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				EF3391F029B1DDDA00DC6E48 /* CountryTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		EFC0B4EC29C2154A00C626A7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EFC0B4ED29C2155400C626A7 /* HeaderView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EFC0B4EF29C21A5900C626A7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EFC0B4F029C21A6200C626A7 /* Country.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -337,11 +370,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF3391F129B1DDDA00DC6E48 /* CountryTableViewCell.swift in Sources */,
 				EF2C073629B1C5CA00A7E91E /* Decoder.swift in Sources */,
 				EF2C070629B1A05100A7E91E /* HomeViewController.swift in Sources */,
 				EF2C070229B1A05100A7E91E /* AppDelegate.swift in Sources */,
 				EF2C074229B1CFDF00A7E91E /* UIView+Extension.swift in Sources */,
 				EF2C070429B1A05100A7E91E /* SceneDelegate.swift in Sources */,
+				EFC0B4F129C21A6200C626A7 /* Country.swift in Sources */,
+				EFC0B4EE29C2155400C626A7 /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

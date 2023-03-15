@@ -17,7 +17,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     options connectionOptions: UIScene.ConnectionOptions
   ) {
     
-    let viewController = HomeViewController()
+    let viewController = HomeViewController(
+      .init(
+        decoder: Decoder()
+      )
+    )
     let navigationController = UINavigationController(rootViewController: viewController)
     navigationController.navigationBar.isHidden = true
     navigationController.modalPresentationStyle = .overFullScreen
