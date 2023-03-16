@@ -10,7 +10,7 @@ protocol CountriesRepositorable {
     decoder: Decodable,
     nsDataAssetConvertor: NSDataAssetConvertable
   ) 
-  func fetch(completionHandler: @escaping (([Country]) -> Void?))
+  func fetch() async -> [Country]
 }
 
 struct CountriesRepository: CountriesRepositorable {
@@ -27,10 +27,10 @@ struct CountriesRepository: CountriesRepositorable {
   }
 }
 
-extension CountriesRepository {
-  func fetch(completionHandler: @escaping (([Country]) -> Void?)) {
-    guard let data = try? nsDataAssetConvertor.data(dataAssetName) else { return }
-    guard let countries = try? decoder.decode([Country].self, data: data) else { return }
-    completionHandler(countries)
+extension CountriesRepository {  
+  func fetch() async -> [Country] {
+    guard let data = try? nsDataAssetConvertor.data(dataAssetName) else { return [] }
+    guard let countries = try? decoder.decode([Country].self, data: data) else { return [] }
+    return countries
   }
 }

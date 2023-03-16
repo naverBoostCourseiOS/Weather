@@ -90,8 +90,8 @@ extension HomeViewController {
 // MARK: - Private Function
 extension HomeViewController {
   private func fetchData() {
-    dependency.countriesRepository.fetch { [weak self] countries in
-      guard let self = self else { return }
+    Task {
+      let countries = await dependency.countriesRepository.fetch()
       self.countries = countries
       self.contriesTableView.reloadData()
     }
