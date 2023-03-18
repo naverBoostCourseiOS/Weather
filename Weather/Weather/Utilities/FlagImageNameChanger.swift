@@ -5,8 +5,6 @@
 //  Created by hyosung on 2023/03/19.
 //
 
-import Foundation
-
 protocol FlagImageNameChangable {
   static func name(_ name: String) -> String
 }
