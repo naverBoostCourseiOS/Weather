@@ -20,7 +20,7 @@ final class CountryTableViewCell: UITableViewCell {
 }
 
 extension CountryTableViewCell {
-  func configure(image: UIImage, title: String) {
+  func configure(image: UIImage?, title: String?) {
     var contents = self.defaultContentConfiguration()
     contents.image = image
     contents.text = title

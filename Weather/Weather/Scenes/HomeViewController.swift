@@ -110,7 +110,7 @@ extension HomeViewController: UITableViewDataSource {
     ) as? CountryTableViewCell
     else { return UITableViewCell() }
     cell.configure(
-      image: UIImage(),
+      image: UIImage(named: FlagImageNameChanger.name(countries[indexPath.item].assetName)),
       title: countries[indexPath.item].koreanName
     )
     return cell
