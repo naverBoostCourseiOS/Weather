@@ -10,7 +10,7 @@
 struct FlagImageNameChangerMock: FlagImageNameChangable {
   static var nameReturnValue: String?
   
-  static func name(_ name: String) -> String {
+  static func change(_ name: String) -> String {
     guard let returnValue = nameReturnValue else { return "" }
     return returnValue
   }

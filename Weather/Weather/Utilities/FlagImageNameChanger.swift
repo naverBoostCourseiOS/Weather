@@ -6,11 +6,11 @@
 //
 
 protocol FlagImageNameChangable {
-  static func name(_ name: String) -> String
+  static func change(_ name: String) -> String
 }
 
 struct FlagImageNameChanger: FlagImageNameChangable {
-  static func name(_ name: String) -> String {
+  static func change(_ name: String) -> String {
     let prefix: String = "flag_"
     return prefix + name
   }

@@ -33,6 +33,7 @@ final class HomeViewController: UIViewController {
       forCellReuseIdentifier: CountryTableViewCell.ID
     )
     tableView.dataSource = self
+    tableView.delegate = self
     tableView.translatesAutoresizingMaskIntoConstraints = false
     return tableView
   }()
@@ -110,10 +111,27 @@ extension HomeViewController: UITableViewDataSource {
     ) as? CountryTableViewCell
     else { return UITableViewCell() }
     cell.configure(
-      image: UIImage(named: FlagImageNameChanger.name(countries[indexPath.item].assetName)),
+      image: UIImage(named: FlagImageNameChanger.change(countries[indexPath.item].assetName)),
       title: countries[indexPath.item].koreanName
     )
     return cell
   }
 }
 
+extension HomeViewController: UITableViewDelegate {
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let country = countries[indexPath.item]
+    let decoder = Decoder()
+    let nsDataAssetConvertor = NSDataAssetConvertor()
+    let citiesRepository = CitiesRepository(
+      country: country.assetName,
+      decoder: decoder,
+      nsDataAssetConvertor: nsDataAssetConvertor
+    )
+    let viewController = CityListViewController(
+      dependency: .init(citiesRepository: citiesRepository),
+      country: country
+    )
+    navigationController?.pushViewController(viewController, animated: true)
+  }
+}

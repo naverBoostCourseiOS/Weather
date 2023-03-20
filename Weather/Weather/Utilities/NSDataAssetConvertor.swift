@@ -17,7 +17,7 @@ struct NSDataAssetConvertor: NSDataAssetConvertable {
   }
   
   func data(_ name: String) throws -> Data {
-    guard let dataAsset = NSDataAsset(name: "countries") else { throw NSDataConvertorError.unknownDataAsset }
+    guard let dataAsset = NSDataAsset(name: name) else { throw NSDataConvertorError.unknownDataAsset }
     return dataAsset.data
   }
 }

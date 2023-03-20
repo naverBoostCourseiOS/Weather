@@ -23,7 +23,7 @@ extension FlagImageNameChangerTests {
   func testFlagImageChanger() {
     FlagImageNameChangerMock.nameReturnValue = "flag_kr"
     let name = "kr"
-    let actualName = FlagImageNameChangerMock.name(name)
+    let actualName = FlagImageNameChangerMock.change(name)
     XCTAssertEqual(actualName, FlagImageNameChangerMock.nameReturnValue)
   }
 }
