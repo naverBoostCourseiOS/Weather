@@ -15,6 +15,7 @@ final class CityListViewController: UIViewController {
   // MARK: - Properties
   private let dependency: Dependency
   private let country: Country
+  private var cities: [City] = []
   
   // MARK: - UI Properties
   private lazy var headerView: HeaderView = {
@@ -25,6 +26,17 @@ final class CityListViewController: UIViewController {
     )
     headerView.translatesAutoresizingMaskIntoConstraints = false
     return headerView
+  }()
+  private lazy var citiesTableView: UITableView = {
+    let tableView = UITableView()
+    tableView.register(
+      CityTableViewCell.self,
+      forCellReuseIdentifier: CityTableViewCell.ID
+    )
+    tableView.dataSource = self
+    tableView.delegate = self
+    tableView.translatesAutoresizingMaskIntoConstraints = false
+    return tableView
   }()
   
   init(
@@ -53,19 +65,57 @@ final class CityListViewController: UIViewController {
 
 // MARK: - Configure UI
 extension CityListViewController {
-  private func configureUI() { }
+  private func configureUI() {
+    view.addSubviews(
+      headerView,
+      citiesTableView
+    )
+  }
 }
 
 // MARK: - Setup Constraints
 extension CityListViewController {
-  private func setupConstraints() { }
+  private func setupConstraints() {
+    [
+      headerView.topAnchor.constraint(equalTo: view.topAnchor),
+      headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+      headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+    ]
+      .forEach { $0.isActive = true }
+    
+    [
+      citiesTableView.topAnchor.constraint(equalTo: headerView.bottomAnchor),
+      citiesTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+      citiesTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+      citiesTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+    ]
+      .forEach { $0.isActive = true }
+  }
 }
 
 // MARK: - Private Function
 extension CityListViewController {
   private func fetchData() {
     Task {
-      let country = try? await dependency.citiesRepository.fetch()
+      let cities = await dependency.citiesRepository.fetch()
+      self.cities = cities
+      self.citiesTableView.reloadData()
     }
   }
+}
+
+extension CityListViewController: UITableViewDataSource {
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return cities.count
+  }
+  
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: CityTableViewCell.ID, for: indexPath) as? CityTableViewCell else { return UITableViewCell() }
+    cell.configure(cities[indexPath.item])
+    return cell
+  }
+}
+
+extension CityListViewController: UITableViewDelegate {
+  
 }

@@ -28,6 +28,14 @@
 		EF606E8129C8AF3300006833 /* CityListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF606E8029C8AF3300006833 /* CityListViewController.swift */; };
 		EF606E8529C8B1EE00006833 /* CitiesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF606E8429C8B1EE00006833 /* CitiesRepository.swift */; };
 		EF606E8729C8B53600006833 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF606E8629C8B53600006833 /* City.swift */; };
+		EF713CA529D1CCDE005FB4FF /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF713CA429D1CCDE005FB4FF /* CityTableViewCell.swift */; };
+		EF713CA729D1D017005FB4FF /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF713CA629D1D017005FB4FF /* UIStackView+Extension.swift */; };
+		EF713CA929D1D350005FB4FF /* FahrenheitConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF713CA829D1D350005FB4FF /* FahrenheitConverter.swift */; };
+		EF713CAB29D1D50D005FB4FF /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF713CAA29D1D50D005FB4FF /* Double+Extension.swift */; };
+		EF713CAD29D1D616005FB4FF /* WeatherSeparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF713CAC29D1D615005FB4FF /* WeatherSeparator.swift */; };
+		EF713CAF29D1DD3A005FB4FF /* FahrenheitConverterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF713CAE29D1DD3A005FB4FF /* FahrenheitConverterMock.swift */; };
+		EF713CB129D1DE1B005FB4FF /* FahrenheitConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF713CB029D1DE1B005FB4FF /* FahrenheitConverterTests.swift */; };
+		EF713CB329D1DF97005FB4FF /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF713CB229D1DF97005FB4FF /* Weather.swift */; };
 		EFC0B4EE29C2155400C626A7 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC0B4ED29C2155400C626A7 /* HeaderView.swift */; };
 		EFC0B4F129C21A6200C626A7 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC0B4F029C21A6200C626A7 /* Country.swift */; };
 		EFC0B4F429C21DEE00C626A7 /* CountriesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC0B4F329C21DEE00C626A7 /* CountriesRepository.swift */; };
@@ -77,6 +85,14 @@
 		EF606E8029C8AF3300006833 /* CityListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListViewController.swift; sourceTree = "<group>"; };
 		EF606E8429C8B1EE00006833 /* CitiesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesRepository.swift; sourceTree = "<group>"; };
 		EF606E8629C8B53600006833 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		EF713CA429D1CCDE005FB4FF /* CityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
+		EF713CA629D1D017005FB4FF /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
+		EF713CA829D1D350005FB4FF /* FahrenheitConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FahrenheitConverter.swift; sourceTree = "<group>"; };
+		EF713CAA29D1D50D005FB4FF /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
+		EF713CAC29D1D615005FB4FF /* WeatherSeparator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherSeparator.swift; sourceTree = "<group>"; };
+		EF713CAE29D1DD3A005FB4FF /* FahrenheitConverterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FahrenheitConverterMock.swift; sourceTree = "<group>"; };
+		EF713CB029D1DE1B005FB4FF /* FahrenheitConverterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FahrenheitConverterTests.swift; sourceTree = "<group>"; };
+		EF713CB229D1DF97005FB4FF /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		EFC0B4ED29C2155400C626A7 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		EFC0B4F029C21A6200C626A7 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		EFC0B4F329C21DEE00C626A7 /* CountriesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesRepository.swift; sourceTree = "<group>"; };
@@ -113,6 +129,7 @@
 			children = (
 				EF26B65429C6191A00E3E6CE /* Mocks */,
 				EF26B65229C617CD00E3E6CE /* FlagImageNameChangerTest.swift */,
+				EF713CB029D1DE1B005FB4FF /* FahrenheitConverterTests.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -121,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				EF26B65529C6194000E3E6CE /* FlagImageNameChangerMock.swift */,
+				EF713CAE29D1DD3A005FB4FF /* FahrenheitConverterMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -239,6 +257,8 @@
 			isa = PBXGroup;
 			children = (
 				EF2C074129B1CFDF00A7E91E /* UIView+Extension.swift */,
+				EF713CA629D1D017005FB4FF /* UIStackView+Extension.swift */,
+				EF713CAA29D1D50D005FB4FF /* Double+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -249,6 +269,8 @@
 				EF2C073F29B1CFAB00A7E91E /* Extensions */,
 				EFC0B4F529C21EBA00C626A7 /* NSDataAssetConvertor.swift */,
 				EF26B64D29C616CF00E3E6CE /* FlagImageNameChanger.swift */,
+				EF713CA829D1D350005FB4FF /* FahrenheitConverter.swift */,
+				EF713CAC29D1D615005FB4FF /* WeatherSeparator.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -257,6 +279,7 @@
 			isa = PBXGroup;
 			children = (
 				EF3391F029B1DDDA00DC6E48 /* CountryTableViewCell.swift */,
+				EF713CA429D1CCDE005FB4FF /* CityTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -274,6 +297,7 @@
 			children = (
 				EFC0B4F029C21A6200C626A7 /* Country.swift */,
 				EF606E8629C8B53600006833 /* City.swift */,
+				EF713CB229D1DF97005FB4FF /* Weather.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -420,7 +444,9 @@
 			files = (
 				EF3391F129B1DDDA00DC6E48 /* CountryTableViewCell.swift in Sources */,
 				EFC0B4F629C21EBA00C626A7 /* NSDataAssetConvertor.swift in Sources */,
+				EF713CAB29D1D50D005FB4FF /* Double+Extension.swift in Sources */,
 				EFC0B4F429C21DEE00C626A7 /* CountriesRepository.swift in Sources */,
+				EF713CB329D1DF97005FB4FF /* Weather.swift in Sources */,
 				EF2C073629B1C5CA00A7E91E /* Decoder.swift in Sources */,
 				EF2C070629B1A05100A7E91E /* HomeViewController.swift in Sources */,
 				EF2C070229B1A05100A7E91E /* AppDelegate.swift in Sources */,
@@ -430,8 +456,12 @@
 				EF26B64E29C616CF00E3E6CE /* FlagImageNameChanger.swift in Sources */,
 				EFC0B4F129C21A6200C626A7 /* Country.swift in Sources */,
 				EF606E8529C8B1EE00006833 /* CitiesRepository.swift in Sources */,
+				EF713CA529D1CCDE005FB4FF /* CityTableViewCell.swift in Sources */,
+				EF713CA729D1D017005FB4FF /* UIStackView+Extension.swift in Sources */,
+				EF713CAD29D1D616005FB4FF /* WeatherSeparator.swift in Sources */,
 				EFC0B4EE29C2155400C626A7 /* HeaderView.swift in Sources */,
 				EF606E8129C8AF3300006833 /* CityListViewController.swift in Sources */,
+				EF713CA929D1D350005FB4FF /* FahrenheitConverter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,8 +471,10 @@
 			files = (
 				EF2C073929B1CBF000A7E91E /* DecoderTests.swift in Sources */,
 				EF2C071929B1A05300A7E91E /* WeatherTests.swift in Sources */,
+				EF713CB129D1DE1B005FB4FF /* FahrenheitConverterTests.swift in Sources */,
 				EF2C073E29B1CCAE00A7E91E /* Person.swift in Sources */,
 				EF26B65629C6194000E3E6CE /* FlagImageNameChangerMock.swift in Sources */,
+				EF713CAF29D1DD3A005FB4FF /* FahrenheitConverterMock.swift in Sources */,
 				EF26B65329C617CD00E3E6CE /* FlagImageNameChangerTest.swift in Sources */,
 				EF2C073C29B1CC0C00A7E91E /* JSON.swift in Sources */,
 			);
@@ -588,6 +620,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

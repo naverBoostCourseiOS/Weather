@@ -11,19 +11,13 @@ protocol CitiesRepositorable {
     decoder: Decodable,
     nsDataAssetConvertor: NSDataAssetConvertable
   )
-  func fetch() async throws -> [City]
+  func fetch() async -> [City]
 }
 
 struct CitiesRepository: CitiesRepositorable {
   private let decoder: Decodable
   private let nsDataAssetConvertor: NSDataAssetConvertable
   private let dataAssetName: String
-  
-  enum CityError: Error {
-    case unknownConvertor
-    case unknownDecoded
-  }
-  
   
   init(
     country: String,
@@ -37,9 +31,9 @@ struct CitiesRepository: CitiesRepositorable {
 }
 
 extension CitiesRepository {
-  func fetch() async throws -> [City] {
-    guard let data = try? nsDataAssetConvertor.data(dataAssetName) else { throw CityError.unknownConvertor }
-    guard let cities = try? decoder.decode([City].self, data: data) else { throw CityError.unknownDecoded }
+  func fetch() async -> [City] {
+    guard let data = try? nsDataAssetConvertor.data(dataAssetName) else { return [] }
+    guard let cities = try? decoder.decode([City].self, data: data) else { return [] }
     return cities
   }
 }
