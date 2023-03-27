@@ -117,5 +117,13 @@ extension CityListViewController: UITableViewDataSource {
 }
 
 extension CityListViewController: UITableViewDelegate {
-  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let koreanTranslator = WeatherTranslator(KoreanTranslatorFactory())
+    let city = cities[indexPath.item]
+    let cityViewController = CityViewController(
+      dependency: .init(koreanTranslator: koreanTranslator),
+      city: city
+    )
+    navigationController?.pushViewController(cityViewController, animated: true)
+  }
 }
