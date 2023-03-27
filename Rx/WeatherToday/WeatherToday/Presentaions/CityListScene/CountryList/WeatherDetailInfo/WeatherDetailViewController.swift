@@ -59,8 +59,4 @@ class WeatherDetailViewController: UIViewController {
             
         ])
     }
-    private func configureView(info: CountryInfoDTO?) {
-        
-        
-    }
 }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct ContriesDTO: Decodable {
+struct CountriesDTO: Decodable {
     let korean_name: String
     let asset_name: String
 }

@@ -21,7 +21,7 @@ final class CityListViewController: UIViewController {
         return tableView
     }()
     
-    var countryInfos: [CountryInfoDTO] = []
+    var countryInfos: [CountryInfoDTO]? = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,12 +45,12 @@ final class CityListViewController: UIViewController {
 // MARK: UITableViewDelegate, UITableViewDataSource Method
 extension CityListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return countryInfos.count
+        return countryInfos?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: CountryListCell.identifier)
-        let info = countryInfos[indexPath.row]
+        guard let info = countryInfos?[indexPath.row] else { return cell }
         let state = WeatherState(rawValue: info.state)
         cell.imageView?.image = UIImage(named: state!.imageName)
         
@@ -65,6 +65,7 @@ extension CityListViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView( _ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let countryInfos = countryInfos else { return }
         let infos = countryInfos.map { info -> WeatherInfo in
             let cityName = info.city_name
             let state = WeatherState(rawValue: info.state)

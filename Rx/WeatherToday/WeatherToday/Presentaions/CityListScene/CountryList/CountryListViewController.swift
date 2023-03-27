@@ -20,7 +20,7 @@ final class CountryListViewController: UIViewController {
         return tableView
     }()
     
-    private var countries: [ContriesDTO] = []
+    private var countries: [CountriesDTO]? = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,28 +53,20 @@ final class CountryListViewController: UIViewController {
     }
     
     private func decodeDataAsset() {
-        let jsonDecoder: JSONDecoder = JSONDecoder()
-        
-        guard let dataAsset: NSDataAsset = NSDataAsset(name: "countries") else { return }
-        
-        do {
-            countries = try jsonDecoder.decode([ContriesDTO].self, from: dataAsset.data)
-            print("countries = \(countries)")
-        } catch {
-            print("error", error.localizedDescription)
-        }
+        var countriesDataDecoder = CustomJSONDecoder<[CountriesDTO]>()
+        countries = countriesDataDecoder.decode(jsonFileName: "countries")
     }
 }
 
 // MARK: UITableViewDelegate, UITableViewDataSource Method
 extension CountryListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return countries.count
+        return countries?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CountryListCell.identifier, for: indexPath)
-        let info = countries[indexPath.row]
+        guard let info = countries?[indexPath.row] else { return cell }
         cell.imageView?.image = UIImage(named: "flag_\(info.asset_name)")
         
         cell.textLabel?.text = info.korean_name
@@ -83,21 +75,15 @@ extension CountryListViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView( _ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let info = countries[indexPath.row]
+        guard let info = countries?[indexPath.row],
+              let vc = self.storyboard!.instantiateViewController(withIdentifier: CityListViewController.identifier) as? CityListViewController
+        else { return }
         
-        let jsonDecoder: JSONDecoder = JSONDecoder()
-        guard let dataAsset: NSDataAsset = NSDataAsset(name: info.asset_name) else { return }
+        var countriesDataDecoder = CustomJSONDecoder<[CountryInfoDTO]>()
         
-        do {
-            let countryInfos: [CountryInfoDTO] = try jsonDecoder.decode([CountryInfoDTO].self, from: dataAsset.data)
-            print("countryInfo = \(countryInfos)")
-            let vc = self.storyboard!.instantiateViewController(withIdentifier: CityListViewController.identifier) as! CityListViewController
-            vc.countryInfos = countryInfos
-            vc.navigationItem.title = info.korean_name
-            self.navigationController?.pushViewController(vc, animated: true)
-        } catch {
-            print("error", error.localizedDescription)
-        }
+        vc.countryInfos = countriesDataDecoder.decode(jsonFileName: info.asset_name)
+        vc.navigationItem.title = info.korean_name
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
