@@ -23,7 +23,7 @@ final class DecoderTests: XCTestCase {
 extension DecoderTests {
   func testDecoder() {
       let decoder = Decoder()
-      let person: Person? = decoder.decode(Person.self, data: JSON)
+      let person: Person? = try? decoder.decode(Person.self, data: JSON)
       XCTAssertEqual(person?.name, "John")
       XCTAssertEqual(person?.age, 30)
   }
