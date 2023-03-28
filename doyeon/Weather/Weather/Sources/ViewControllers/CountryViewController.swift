@@ -13,10 +13,6 @@ class CountryViewController: UIViewController, UITableViewDelegate, UITableViewD
     let customCellIdentifier: String = "customCell"
     var countryJSONFileName: String?
     var selectedCountryName: String?
-    var weatherImageName: String?
-    var cityName: String?
-    var temperature: String?
-    var precipitationProbability: String?
     var weathers: [Weather] = []
 
     override func viewDidLoad() {
