@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3660581F29D1428B00BD6D0A /* CustomJSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3660581E29D1428B00BD6D0A /* CustomJSONDecoder.swift */; };
+		36E5554629DA9C4F00B398FE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 36E5554529DA9C4F00B398FE /* Localizable.strings */; };
+		36E5554829DA9CEF00B398FE /* Ex_String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E5554729DA9CEF00B398FE /* Ex_String.swift */; };
 		EF71728929ABC8AC0064CEA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF71728829ABC8AC0064CEA9 /* AppDelegate.swift */; };
 		EF71728B29ABC8AC0064CEA9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF71728A29ABC8AC0064CEA9 /* SceneDelegate.swift */; };
 		EF71728D29ABC8AC0064CEA9 /* CountryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF71728C29ABC8AC0064CEA9 /* CountryListViewController.swift */; };
@@ -44,6 +46,8 @@
 
 /* Begin PBXFileReference section */
 		3660581E29D1428B00BD6D0A /* CustomJSONDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomJSONDecoder.swift; sourceTree = "<group>"; };
+		36E5554529DA9C4F00B398FE /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		36E5554729DA9CEF00B398FE /* Ex_String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ex_String.swift; sourceTree = "<group>"; };
 		EF71728529ABC8AC0064CEA9 /* WeatherToday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherToday.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF71728829ABC8AC0064CEA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF71728A29ABC8AC0064CEA9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -152,6 +156,7 @@
 			children = (
 				EF71728E29ABC8AC0064CEA9 /* Main.storyboard */,
 				EF7D57D929B65181000950DB /* CityListScene */,
+				36E5554729DA9CEF00B398FE /* Ex_String.swift */,
 			);
 			path = Presentaions;
 			sourceTree = "<group>";
@@ -159,6 +164,7 @@
 		EF7172C029ACEC210064CEA9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				36E5554529DA9C4F00B398FE /* Localizable.strings */,
 				EF71729129ABC8AE0064CEA9 /* Assets.xcassets */,
 				EF71729329ABC8AE0064CEA9 /* LaunchScreen.storyboard */,
 				EF71729629ABC8AE0064CEA9 /* Info.plist */,
@@ -308,6 +314,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36E5554629DA9C4F00B398FE /* Localizable.strings in Resources */,
 				EFD5355D29B651A8009A9805 /* CountryListCell.xib in Resources */,
 				EF71729529ABC8AE0064CEA9 /* LaunchScreen.storyboard in Resources */,
 				EF71729229ABC8AE0064CEA9 /* Assets.xcassets in Resources */,
@@ -341,6 +348,7 @@
 				EF71728D29ABC8AC0064CEA9 /* CountryListViewController.swift in Sources */,
 				EF7172C629ACF55D0064CEA9 /* CountryListDTO.swift in Sources */,
 				EF7D57D829B641E8000950DB /* WeatherDetailViewController.swift in Sources */,
+				36E5554829DA9CEF00B398FE /* Ex_String.swift in Sources */,
 				3660581F29D1428B00BD6D0A /* CustomJSONDecoder.swift in Sources */,
 				EF71728929ABC8AC0064CEA9 /* AppDelegate.swift in Sources */,
 				EF71728B29ABC8AC0064CEA9 /* SceneDelegate.swift in Sources */,

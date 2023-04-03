@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  WeatherToday
+
+  Created by dongyeongkang on 2023/04/03.
+  
+*/
+
+"sunny" = "해";
+"cloudy" = "구름";
+"rainy" = "비";
+"snowy" = "눈";
