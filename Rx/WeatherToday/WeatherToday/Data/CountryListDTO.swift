@@ -8,16 +8,28 @@
 import UIKit
 
 struct CountriesDTO: Decodable {
-    let korean_name: String
-    let asset_name: String
+    let koreanName: String
+    let assetName: String
+    
+    enum CodingKeys: String, CodingKey {
+        case koreanName = "korean_name"
+        case assetName = "asset_name"
+    }
 }
 
 
 struct CountryInfoDTO: Decodable {
-    let city_name: String
-    let state: Int
+    let cityName: String
+    let state: WeatherStateCode
     let celsius: Float
-    let rainfall_probability: Int
+    let rainfallProbability: Int
+    
+    enum CodingKeys: String, CodingKey {
+        case cityName = "city_name"
+        case state
+        case celsius
+        case rainfallProbability = "rainfall_probability"
+    }
 }
 
 struct WeatherInfo {

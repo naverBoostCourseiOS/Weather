@@ -7,6 +7,13 @@
 
 import Foundation
 
+enum WeatherStateCode: Int, Decodable {
+    case sunny = 10
+    case cloudy
+    case rainy
+    case snowy
+}
+
 enum WeatherState: Int {
     case sunny = 10
     case cloudy
@@ -15,30 +22,21 @@ enum WeatherState: Int {
     
     var imageName: String {
         switch self {
-        case .sunny:
-            return "sunny"
             
-        case .cloudy:
-            return "cloudy"
-
-        case .rainy:
-            return "rainy"
-        
-        case .snowy:
-            return "snowy"
+        case .sunny: return "sunny"
+        case .cloudy: return "cloudy"
+        case .rainy: return "rainy"
+        case .snowy: return "snowy"
         }
     }
     
-    var loacalized: String {
+    var title: String {
         switch self {
-        case .sunny:
-            return "해"
-        case .cloudy:
-            return "구름"
-        case .rainy:
-            return "비"
-        case .snowy:
-            return "눈"
+            
+        case .sunny: return "sunny"
+        case .cloudy: return "cloudy"
+        case .rainy: return "rainy"
+        case .snowy: return "snowy"
         }
     }
 }

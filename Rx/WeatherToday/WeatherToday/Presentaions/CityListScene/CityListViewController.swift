@@ -51,13 +51,24 @@ extension CityListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: CountryListCell.identifier)
         guard let info = countryInfos?[indexPath.row] else { return cell }
-        let state = WeatherState(rawValue: info.state)
+        switch info.state {
+            
+        case .sunny:
+            <#code#>
+        case .cloudy:
+            <#code#>
+        case .rainy:
+            <#code#>
+        case .snowy:
+            <#code#>
+        }
+        let state = WeatherState(rawValue: info.state.rawValue)
         cell.imageView?.image = UIImage(named: state!.imageName)
         
-        cell.textLabel?.text = info.city_name
+        cell.textLabel?.text = info.cityName
         let celsius = info.celsius
         let fahrenheit = String(format: "%.1f", (celsius * 1.8) + 32)
-        cell.detailTextLabel?.text = "섭씨 \(info.celsius)도 / 화씨 \(fahrenheit)도\n강수확률 \(info.rainfall_probability)%"
+        cell.detailTextLabel?.text = "섭씨 \(info.celsius)도 / 화씨 \(fahrenheit)도\n강수확률 \(info.rainfallProbability)%"
         cell.detailTextLabel?.numberOfLines = 2
         
         cell.accessoryType = .disclosureIndicator
@@ -67,14 +78,15 @@ extension CityListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView( _ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let countryInfos = countryInfos else { return }
         let infos = countryInfos.map { info -> WeatherInfo in
-            let cityName = info.city_name
-            let state = WeatherState(rawValue: info.state)
+            let cityName = info.cityName
+            let state = WeatherState(rawValue: info.state.rawValue)
             let image = UIImage(named: state!.imageName)
-            let localized = state!.loacalized
+            let localized = state!.title.localized
+            
             let celsius = info.celsius.description
             let fahrenheit = String(format: "%.1f", (info.celsius * 1.8) + 32)
             let temperature = "섭씨 \(celsius)도, 화씨 \(fahrenheit)도"
-            let rainfallProbability = "강수확률 \(info.rainfall_probability)%"
+            let rainfallProbability = "강수확률 \(info.rainfallProbability)%"
             
             
             return WeatherInfo(cityName: cityName,

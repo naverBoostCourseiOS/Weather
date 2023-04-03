@@ -67,9 +67,9 @@ extension CountryListViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CountryListCell.identifier, for: indexPath)
         guard let info = countries?[indexPath.row] else { return cell }
-        cell.imageView?.image = UIImage(named: "flag_\(info.asset_name)")
+        cell.imageView?.image = UIImage(named: "flag_\(info.assetName)")
         
-        cell.textLabel?.text = info.korean_name
+        cell.textLabel?.text = info.koreanName
         cell.accessoryType = .disclosureIndicator
         return cell
     }
@@ -81,8 +81,8 @@ extension CountryListViewController: UITableViewDelegate, UITableViewDataSource 
         
         var countriesDataDecoder = CustomJSONDecoder<[CountryInfoDTO]>()
         
-        vc.countryInfos = countriesDataDecoder.decode(jsonFileName: info.asset_name)
-        vc.navigationItem.title = info.korean_name
+        vc.countryInfos = countriesDataDecoder.decode(jsonFileName: info.assetName)
+        vc.navigationItem.title = info.koreanName
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
